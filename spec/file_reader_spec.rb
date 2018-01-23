@@ -15,7 +15,7 @@ describe FileReader do
       expect(file_reader).to receive(:file_read).and_return('Driver Dan
                                                              Trip Dan 06:00 12:00 68')
       file_reader.read_file
-      driver_info = file_reader.process_trip.calculate_speed_for_trip_sheet(file_reader.trip_registry)
+      driver_info = file_reader.trip_processor.calculate_speed_for_trip_sheet(file_reader.trip_registry)
       puts driver_info
       expect(file_reader.trip_registry.get_speed('Dan')).to be > 0
     end
@@ -58,7 +58,7 @@ describe FileReader do
                                                              Trip Dan 12:00 12:30 10
                                                              Trip Dan 12:00 12:30 40')
       file_reader.read_file
-      file_reader.process_trip.calculate_speed_for_trip_sheet(file_reader.trip_registry)
+      file_reader.trip_processor.calculate_speed_for_trip_sheet(file_reader.trip_registry)
       expect(file_reader.trip_registry.get_speed('Dan')).to be > 0
     end
 

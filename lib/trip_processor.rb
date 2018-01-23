@@ -3,7 +3,7 @@ require_relative 'trip_registry'
 require 'time'
 require 'pry'
 # Validates the file content performs appropriate action
-class ProcessTrip
+class TripProcessor
   attr_reader :trip_line, :trip_registry, :time_difference, :errors
   def initialize(trip_input, trip_registry)
     @trip_line = trip_input
