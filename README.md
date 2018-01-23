@@ -49,14 +49,34 @@ Alex: 42 miles @ 34 mph
 Dan: 39 miles @ 47 mph
 Bob: 0 miles
 ```
+
+It prints the error messages of the rejected lines with the output.
+
+```
+["Trip", "Dan", "06:12"] : Incorrect length. Req:5
+["Driver", "Ben", "1"] : Incorrect length. Req:2
+["driver"] : Invalid command
+Alex: 72 miles @ 29 mph
+Dan: 39 miles @ 47 mph
+Ben: 0 mileskarthick@karthick:~/RubymineProjects/tripreport$ 
+
+```
 I used hash because it is efficient to do a quick search of the driver and retrieve their information and update it.
 
 ## Assumptions made: 
 Discard any trips that average a speed of less than 5 mph or greater than 100 mph. => This lines is little confusing. There are 2 cases can be assumed.
+
 case 1: Calculate a running speed for each trip of the driver and then add the speed of the current trip speed, see if the average speed is > 5mph or < 100 mph. Eleminate the current trip line if adding the current trip speed with the total speed of the driver falls out of the range. 
 
 Case 2: Calculae speed of each trip and discard the trip if the speed is not within the range.
 I assumed and followed the case 2 as the first case assumption has lot of flaws with the calculation.
 
+## Future work:
+1) With more time, I'll collect all the error messages of the rejected lines separately and display them separately after printing the report
 
+2) I'll optmize the exceptions for all the error messages
+
+3) Test all functionalities with more test cases.
+
+4) Learn new design priciples and refactor the code for performance optmization.
 
